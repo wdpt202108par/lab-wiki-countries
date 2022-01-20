@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import countries from "../countries.json"
 import "bootstrap/dist/css/bootstrap.css";
 
 class CountryDetails extends React.Component {
   getCountryDetails = (countryId) => {
-    return countries.find(country => country.cca3 === countryId);
+    return this.props.countries.find(country => country.cca3 === countryId);
   }
 
   render() {
@@ -14,6 +13,8 @@ class CountryDetails extends React.Component {
     }
 
     const country = this.getCountryDetails(this.props.match.params.id);
+
+    if (!country) return 'loading...' 
 
     return (
       <div className="col-7">
