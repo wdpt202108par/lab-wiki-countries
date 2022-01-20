@@ -36,7 +36,7 @@ class CountryDetails extends React.Component {
               <td>Borders</td>
               <td>
                 <ul>
-                  {country.borders.map(borderId => <li><Link to={`/${borderId}`}>{this.getCountryDetails(borderId).name.common}</Link></li>)}
+                  {country.borders.map(borderId => <li key={borderId}><Link to={`/${borderId}`}>{this.getCountryDetails(borderId).name.common}</Link></li>)}
                 </ul>
               </td>
             </tr>

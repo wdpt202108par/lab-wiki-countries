@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar.js";
 import CountriesList from "./components/CountriesList.js"; 
 import CountryDetails from "./components/CountryDetails.js";
+import countries from "./countries.json";
 import { Switch, Route } from "react-router-dom";
 import './App.css';
 
@@ -10,7 +11,7 @@ function App() {
       <Navbar />
       <div className="container">
         <div className="row">
-          <CountriesList />
+          <CountriesList countries={countries}/>
           <Switch>
             <Route path="/:id" component={CountryDetails} />
           </Switch>

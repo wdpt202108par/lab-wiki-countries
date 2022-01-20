@@ -1,11 +1,10 @@
 import React from "react";
 import Country from "./Country.js"
-import countries from "../countries.json";
 import "bootstrap/dist/css/bootstrap.css";
 
 class CountriesList extends React.Component {
   state = {
-    countries: countries
+    countries: this.props.countries
   }
 
   render() {
