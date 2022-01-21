@@ -1,9 +1,20 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
-import React, {Components} from 'react';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import CountriesList from './Components/CountriesList'
 
 function App() {
+  const divStyleCol5 = {
+    maxHeight: '90vh',
+    overflow: 'scroll'
+  };
+  
+  const divStyleCol7 = {
+    width: '30%'
+  };
+
   return (
     <div className="App">
       <NavBar />
@@ -12,14 +23,18 @@ function App() {
         
         <div className="row">
         
-          <div className="col-5">
+          <div className="col-5" style={divStyleCol5}>
             <div className="list-group">
-        
+
+            <Switch>
+              <Route exact path="/" component={CountriesList} /> 
+            </Switch>
+
             </div>
           </div>
 
          
-          <div className="col-7">
+          <div className="col-7" style={divStyleCol7}>
             <h1>France</h1>
             <table className="table">
               <thead></thead>
