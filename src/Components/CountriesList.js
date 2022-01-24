@@ -12,9 +12,9 @@ class CountriesList extends Component {
       <>
         {this.state.countries.map((country) => { 
           return (
-            <div key={country.ccn3}>
-              <Link to={`/countries/${country.ccn3}`}>{country.name.official}</Link>
-          </div>
+            <div key={country.cca3}>
+              <Link to={`/countries/${country.cca3}`}>{country.flag} {country.name.official}</Link>
+            </div>
           )
         })}
       </>
