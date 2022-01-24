@@ -1,19 +1,14 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom';
-import json from '../countries.json'
 
 class CountriesList extends Component {
-  state = {
-    countries: json
-  }
-
   render () {
     return (
       <>
-        {this.state.countries.map((country) => { 
+        {this.props.countries.map((country) => { 
           return (
-            <div key={country.cca3}>
-              <Link to={`/countries/${country.cca3}`}>{country.flag} {country.name.official}</Link>
+            <div key={country.alpha3Code}>
+              <Link to={`/countries/${country.alpha3Code}`}>{country.flag} {country.name}</Link>
             </div>
           )
         })}
